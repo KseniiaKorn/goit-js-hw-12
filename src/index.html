@@ -3,25 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HW12</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <title>HW 12</title>
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <form id="search-form">
-      <input
-        class="search-input"
-        type="text"
-        name="searchtext"
-        placeholder="Search images..."
-      />
-      <button class="search-btn" type="submit">Search</button>
-    </form>
-
-    <section class="container">
-      <span class="js-loader"></span>
-      <ul class="gallery js-gallery"></ul>
-    </section>
-
+    <div class="container">
+      <div class="form-container">
+        <form action="form" class="form">
+          <input type="text" name="input" placeholder="Search images..." />
+          <button type="submit" class="search-button">Search</button>
+        </form>
+      </div>
+      <span class="loader"></span>
+      <div class="gallery-container">
+        <ul class="gallery"></ul>
+        <button type="button" class="load-more-button">Load more...</button>
+      </div>
+    </div>
     <script type="module" src="./main.js"></script>
   </body>
 </html>
