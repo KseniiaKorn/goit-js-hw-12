@@ -3,27 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HW12</title>
+    <title>HW 12</title>
     <script type="module" crossorigin src="/goit-js-hw-12/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-5ObWk2rO.js">
-    <link rel="stylesheet" crossorigin href="/goit-js-hw-12/assets/vendor-DumFYO8Z.css">
-    <link rel="stylesheet" crossorigin href="/goit-js-hw-12/assets/index-BpkPupNB.css">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-BsCdK5bc.js">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-12/assets/vendor-CWKLx11g.css">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-12/assets/index-CCIfwTGh.css">
   </head>
   <body>
-    <form id="search-form">
-      <input
-        class="search-input"
-        type="text"
-        name="searchtext"
-        placeholder="Search images..."
-      />
-      <button class="search-btn" type="submit">Search</button>
-    </form>
-
-    <section class="container">
-      <span class="js-loader"></span>
-      <ul class="gallery js-gallery"></ul>
-    </section>
-
+    <div class="container">
+      <div class="form-container">
+        <form action="form" class="form">
+          <input type="text" name="input" placeholder="Search images..." />
+          <button type="submit" class="search-button">Search</button>
+        </form>
+      </div>
+      <span class="loader"></span>
+      <div class="gallery-container">
+        <ul class="gallery"></ul>
+        <button type="button" class="load-more-button">Load more...</button>
+      </div>
+    </div>
   </body>
 </html>
