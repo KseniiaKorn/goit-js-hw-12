@@ -17,6 +17,7 @@ let totalPagesToLoad = 0;
 form.addEventListener('submit', searchImagesFu);
 loadMoreButton.addEventListener('click', loadMoreImages);
 
+
 async function searchImagesFu(event) {
   event.preventDefault();
 
@@ -39,6 +40,7 @@ async function searchImagesFu(event) {
   }
 
   loader.classList.remove('hidden');
+  loader.style.display = 'block'; // add
 
   const options = {
     params: {
@@ -84,12 +86,14 @@ async function searchImagesFu(event) {
     });
   } finally {
     loader.classList.add('hidden');  
+    loader.style.display = 'none'; // add
     form.reset();
   }
 }
 
 async function loadMoreImages() {
   loader.classList.remove('hidden');
+  loader.style.display = 'block'; // add
   currentPage += 1;
 
   const options = {
@@ -121,6 +125,7 @@ async function loadMoreImages() {
     });
   } finally {
     loader.classList.add('hidden');
+    loader.style.display = 'none'; // add
     if (currentPage >= totalPagesToLoad) {
       loadMoreButton.style.display = 'none';
       iziToast.info({
