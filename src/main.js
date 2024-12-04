@@ -53,7 +53,6 @@ async function searchImagesFu(event) {
 
   try {
     const data = await createHttpRequest(options);
-    loader.classList.add('hidden');
 
     if (data.hits.length === 0) {
       iziToast.error({
@@ -79,12 +78,12 @@ async function searchImagesFu(event) {
       }
     }
   } catch (error) {
-    loader.classList.add('hidden');
     iziToast.error({
       title: '',
       message: `Error fetching images: ${error.message || error}`,
     });
   } finally {
+    loader.classList.add('hidden');  
     form.reset();
   }
 }
@@ -106,7 +105,6 @@ async function loadMoreImages() {
 
   try {
     const data = await createHttpRequest(options);
-    loader.classList.add('hidden');
 
     addImagesToHtml(data.hits);
 
@@ -117,12 +115,12 @@ async function loadMoreImages() {
       behavior: 'smooth',
     });
   } catch (error) {
-    loader.classList.add('hidden');
     iziToast.error({
       title: '',
       message: `Error fetching images: ${error.message || error}`,
     });
   } finally {
+    loader.classList.add('hidden');
     if (currentPage >= totalPagesToLoad) {
       loadMoreButton.style.display = 'none';
       iziToast.info({

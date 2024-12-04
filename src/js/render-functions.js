@@ -1,6 +1,13 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
+const lightBox = new SimpleLightbox('.gallery li a', {
+    captions: true,
+    captionsData: 'alt',
+    captionPosition: 'bottom',
+    captionDelay: 250,
+  });
+
 export default function addImagesToHtml(images) {
   const gallery = document.querySelector('.gallery');
 
@@ -24,12 +31,7 @@ export default function addImagesToHtml(images) {
 
   gallery.insertAdjacentHTML('beforeend', imagesHtml);
 
-  const lightBox = new SimpleLightbox('.gallery li a', {
-    captions: true,
-    captionsData: 'alt',
-    captionPosition: 'bottom',
-    captionDelay: 250,
-  });
+  
 
   lightBox.refresh();
 }
